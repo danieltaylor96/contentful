@@ -33,7 +33,7 @@
       </div>
     </header>
 
-<section class="body-container-test image-text">
+<section class="body-container-test image-text image-text-block">
       <div class=" wrapper">
         <div class="row">
           <div class="col">
