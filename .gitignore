@@ -128,7 +128,7 @@ $RECYCLE.BIN/
 ############################################
 
 # Nuxt build
-# .nuxt
+.nuxt
 
 # Nuxt generate
 # dist
@@ -137,4 +137,4 @@ $RECYCLE.BIN/
 # .contentful.json
 
 # data
-# data
+data
