@@ -33,6 +33,24 @@
       </div>
     </header>
 
+<section class="body-container-test image-text">
+      <div class=" wrapper">
+        <div class="row">
+          <div class="col">
+            <h3>{{ imagetext.fields.subHeading }}</h3>
+            <h2>{{ imagetext.fields.heading }}</h2>
+            <p>{{ imagetext.fields.text }}</p>
+            <a href="">{{ imagetext.fields.linkText }}</a>
+            </div>
+            <div class="col">
+            <img :src="imagetext.fields.image.fields.file.url + '?w=1200'">
+            </div>
+         </div>
+      </div>
+
+    </section>
+
+
     <section class="body-container">
       <div class="items-bar wrapper">
         <h2>Recent articles</h2>
@@ -61,12 +79,16 @@ export default {
         'sys.id': env.CTF_PERSON_ID
       }),
       client.getEntries({
+        'sys.id': env.CTF_IMAGETEXT_ID
+      }),
+      client.getEntries({
         'content_type': env.CTF_BLOG_POST_TYPE_ID,
         order: '-sys.createdAt'
       })
-    ]).then(([entries, posts]) => {
+    ]).then(([entries, imageText, posts]) => {
       return {
         person: entries.items[0],
+        imagetext: imageText.items[0],
         posts: posts.items
       }
     }).catch(console.error)
@@ -171,4 +193,41 @@ export default {
   fill: #2199e8;
 }
 
+.image-text{
+  padding: 40px 0;
+  background-color: #FAFAFA;
+}
+.image-text .row{
+  display: flex;
+}
+.image-text .row .col{
+  width: 50%;
+  padding: 0 10px;
+}
+
+.image-text .row .col h2{
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.image-text .row .col h3{
+  font-size: 16px;
+  font-weight: 700;
+  color: #09B0F2;
+}
+
+.image-text .row .col a{
+  width: 113px;
+  height: 46px;
+  color: #000060;
+  padding: 10px 15px;
+  border: 2px solid #000060;
+  border-radius: 40px;
+  text-decoration: none;
+  margin-top: 20px;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.4;
+  font-weight: 700;
+}
 </style>
