@@ -9,7 +9,7 @@
           <a href="/" class="person-name">{{ person.fields.name }}</a>
           <Navigation></Navigation>
         </div>
-        <div class="page-info wrapper">
+        <div class="page-info wrapper test">
           <h2>{{ person.fields.title }}</h2>
           <p>{{ person.fields.shortBio }}</p>
           <ul class="social-icons">
