@@ -40,6 +40,7 @@
             <h3>{{ imagetext.fields.subHeading }}</h3>
             <h2>{{ imagetext.fields.heading }}</h2>
             <p>{{ imagetext.fields.text }}</p>
+            {{ imagetext.fields.content }}
             <a href="">{{ imagetext.fields.linkText }}</a>
             </div>
             <div class="col">
